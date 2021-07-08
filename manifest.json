@@ -1,0 +1,31 @@
+{
+    "name": "Phishing detection",
+    "description": "Detects Phishing sites ",
+    "version": "0.0",
+    "permissions":[
+        "activeTab",
+        "tabs",
+        "notifications",
+        "http://*/",
+        "https://*/",
+        "nativeMessaging",
+        "cookies",
+        "alarms"
+    ],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "all_frames": true,
+        "js":["contentScript.js"]
+    }],
+   
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    
+    "browser_action":{
+        "default_title": "Image Source",
+        "default_popup":"./Login_v4/Login_v4/popup.html"
+    },
+    "manifest_version": 2 
+}
